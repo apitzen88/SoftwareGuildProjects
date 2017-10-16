@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vending Machine</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 align="center">Vending Machine</h1>
+        <hr>
+
+
+        <div class="row">
+
+
+            <div class="col-xs-7 well" id="item-wrapper"></div>
+
+            <div class="col-xs-1"></div>
+
+
+            <div class="col-xs-4" id="menu-wrapper">
+
+                <div id="add-money-row" class="row">
+                    <div id="balance-display" class="well">
+                        <h3 id="menu-header">Balance</h3>
+                        <div id="screen">
+                            <h3 id="balance"></h3>
+                        </div>
+
+
+                        <div id="add-money-btns">
+                            <table id="button-table">
+                                <tr>
+                                    <td class="money-button" align="center">
+                                        <button type="button" class="btn btn-default btn-block" id="add-dollar">Dollar</button>
+                                    </td>
+                                    <td class="money-button" align="center">
+                                        <button type="button" class="btn btn-default btn-block" id="add-quarter">Quarter</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="money-button" align="center">
+                                        <button type="button" class="btn btn-default btn-block" id="add-dime">Dime</button>
+                                    </td>
+                                    <td class="money-button" align="center">
+                                        <button type="button" class="btn btn-default btn-block" id="add-nickel">Nickel</button>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+
+                <div id="purchase-row" class="row" vertical-align="middle">
+                    <div id="message-display" class="well">
+                        <h3 id="menu-header">Messages</h3>
+                        <div id="screen">
+                            <h3 id="message"></h3>
+                        </div>
+
+                        <table id="item-table" align="center">
+                            <tr id="item-label">
+                                <td>
+                                    <h4>Item: </h4>
+                                </td>
+                                <td><input type="text" class="form-control" id="item-screen" placeholder="Item #" required/></td>
+                            </tr>
+                        </table>
+
+                        <button type="button" class="btn btn-default btn-block" id="purchase-button">Make Purchase</button>
+                    </div>
+                    <hr>
+                </div>
+
+                <div id="change-row" class="row" vertical-align="middle">
+                    <div id="change-display" class="well">
+                        <h3 id="menu-header">Change</h3>
+                        <div id="screen">
+                            <h3 id="change"></h3>
+                        </div>
+
+                        <table id="change-table" align="center">
+                            <tr>
+                                <td>Quarters: <input type="text" class="form-control" id="quarters-screen" placeholder="0" required/></td>
+                                <td>Dimes: <input type="text" class="form-control" id="dimes-screen" placeholder="0" required/></td>
+                            </tr>
+                            <tr>
+                                <td>Nickels: <input type="text" class="form-control" id="nickels-screen" placeholder="0" required/></td>
+                                <td>Pennies: <input type="text" class="form-control" id="pennies-screen" placeholder="0" required/></td>
+                            </tr>
+                        </table>
+
+                        <button type="button" class="btn btn-default btn-block" id="change-button">Return Change</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <hr>
+    </div>
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>

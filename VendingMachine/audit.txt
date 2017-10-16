@@ -1,0 +1,6 @@
+2017-09-18T15:31:07.313 : checkInventory | void com.sg.vendingmachine.servicelayer.VendingMachineServiceLayer.checkInventory(String) | [001] | ITEM IS OUT OF STOCK
+2017-09-18T15:56:45.749 : checkPrice | void com.sg.vendingmachine.servicelayer.VendingMachineServiceLayer.checkPrice(BigDecimal,BigDecimal) | [0.25, 1.27] | INSUFFICIENT FUNDS
+2017-09-18T16:06:28.063 : checkPrice | void com.sg.vendingmachine.servicelayer.VendingMachineServiceLayer.checkPrice(BigDecimal,BigDecimal) | [0.25, 1.27] | INSUFFICIENT FUNDS
+2017-09-18T16:10:49.266 : checkInventory | void com.sg.vendingmachine.servicelayer.VendingMachineServiceLayer.checkInventory(String) | [001] | ITEM IS OUT OF STOCK
+2017-09-18T16:10:51.814 : checkPrice | void com.sg.vendingmachine.servicelayer.VendingMachineServiceLayer.checkPrice(BigDecimal,BigDecimal) | [0.23, 1.27] | INSUFFICIENT FUNDS
+2017-09-18T16:10:56.192 : checkPrice | void com.sg.vendingmachine.servicelayer.VendingMachineServiceLayer.checkPrice(BigDecimal,BigDecimal) | [1.23, 1.27] | INSUFFICIENT FUNDS
