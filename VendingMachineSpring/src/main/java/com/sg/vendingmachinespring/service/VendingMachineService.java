@@ -26,7 +26,7 @@ public interface VendingMachineService {
     
     public String currentMessage();
     
-    public void purchaseItem(String id);
+    public void purchaseItem(String id) throws InvalidEntryException;
     
     public BigDecimal currentBalance();
     

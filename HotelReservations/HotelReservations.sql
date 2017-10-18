@@ -73,16 +73,6 @@ create table Guests
     primary key(GuestID)
 );
 
-create table CustomerGuest
-(
-	CustomerID int not null,
-    GuestID int not null,
-    foreign key(CustomerID)
-    references Customer(CustomerID),
-    foreign key(GuestID)
-    references Guests(GuestID)
-);
-
 create table Promotions
 (
 	PromotionID int not null auto_increment,
@@ -120,6 +110,16 @@ create table Reservation
     primary key(ReservationID),
     foreign key (CustomerID)
     references Customer(CustomerID)
+);
+
+create table ReservationGuest
+(
+	ReservationID int not null,
+    GuestID int not null,
+    foreign key(ReservationID)
+    references Reservation(ReservationID),
+    foreign key(GuestID)
+    references Guests(GuestID)
 );
 
 create table ReservationRooms
@@ -162,18 +162,32 @@ create table ReservationDetails
 (
 	ReservationDetailsID int not null auto_increment,
     ReservationID int not null,
-    ReservationRoomsID int not null,
-    ReservationRoomsAddOnsID int,
+    RoomID int not null,
+    AddOn varchar(45),
+    AddOnPrice decimal(10,2),
     primary key(ReservationDetailsID),
     foreign key(ReservationID)
+    references Reservation(ReservationID)
+);
+
+create table Invoice
+(
+	InvoiceID int not null auto_increment,
+    ReservationID int not null,
+    CustomerID int not null,
+    AddonTotal decimal(12,2),
+    Subtotal decimal(12,2),
+    DiscountTotal decimal(12,2),
+    Tax decimal(12,2),
+    GrandTotal decimal(12,2),
+    primary key(InvoiceID),
+    foreign key(ReservationID)
     references Reservation(ReservationID),
-    foreign key (ReservationRoomsID)
-    references ReservationRooms(ReservationRoomsID),
-    foreign key(ReservationRoomsAddOnsID)
-    references ReservationRoomsAddOns(ReservationRoomsAddOnsID)
+    foreign key (CustomerID)
+    references Reservation(ReservationID)
 );
 
 
-
-INSERT INTO `RoomType` (`RoomTypeID`,`RoomType`) VALUES (1,"King,"),(2,"2 Queens."),(3,"Suite.");
-INSERT INTO 'Rooms' ('RoomID','RoomNumber','RoomFloor','RoomTypeID') values(1,'101",1
+#INSERT INTO `RoomType` (RoomTypeID, RoomType) VALUES (1,"King,"),(2,"2 Queens."),(3,"Suite.");
+#INSERT INTO Rooms (RoomID, RoomNumber, RoomFloor, RoomTypeID) values(1,101,1,1),(2,202,2,2),(3,303,3,3);
+#INSERT INTO 

@@ -7,6 +7,7 @@ package com.sg.vendingmachinespring.controller;
 
 import com.sg.vendingmachinespring.model.Change;
 import com.sg.vendingmachinespring.model.Item;
+import com.sg.vendingmachinespring.service.InvalidEntryException;
 import com.sg.vendingmachinespring.service.VendingMachineService;
 import java.math.BigDecimal;
 import java.util.List;
@@ -94,11 +95,14 @@ public class VendingMachineController {
 
     @RequestMapping(value = "/purchaseItem", method = RequestMethod.POST)
     public String purchaseItem(HttpServletRequest request, Model model) {
-        
+        try{
         String id = request.getParameter("itemId");
         
         service.purchaseItem(id);
         
+        } catch(InvalidEntryException ex){
+            
+        }
         return "redirect:displayItems";
     }
     

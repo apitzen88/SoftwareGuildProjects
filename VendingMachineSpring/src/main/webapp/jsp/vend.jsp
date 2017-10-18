@@ -41,7 +41,7 @@
                                         <b><c:out value="${currentItem.name}"/></b>
                                     </p>
                                     <p>
-                                        $ <c:out value="${currentItem.price}"/>
+                                        $<c:out value="${currentItem.price}"/>
                                     </p>
                                     <p>
                                         In Stock: <c:out value="${currentItem.inventory}"/>
@@ -59,11 +59,11 @@
                 <div class="col-xs-4" id="menu-wrapper">
 
                     <div id="add-money-row" class="row">
-                        
+
                         <div id="balance-display" class="well">
                             <h3 id="menu-header">Balance</h3>
                             <div id="screen">
-                                <h3 id="balance">$ ${currentBalance}</h3>
+                                <h3 id="balance">$${currentBalance}</h3>
                             </div>
 
 
@@ -120,16 +120,18 @@
                                 <h3 id="message">${currentMessage}</h3>
                             </div>
                             <form method="POST" action="purchaseItem">
-                                <table id="item-table" align="center">
+                                <table id="item-table" align="center" style="table-layout:fixed;width:70%">
                                     <tr id="item-label">
                                         <td>
-                                            <h4>Item Id: </h4>
+                                            <h4 align="center">Item Id: </h4>
                                         </td>
                                         <td>
                                             <input name="itemId" 
                                                    value="${selectedItem}" 
                                                    type="text" class="form-control" 
-                                                   id="item-screen" placeholder="Item Id" required/>
+                                                   id="item-screen"
+                                                   style="width:70%"
+                                                   placeholder="Item Id" required/>
                                         </td>
                                     </tr>
                                 </table>
@@ -151,47 +153,51 @@
 
                             <table id="change-table" align="center" style="table-layout:fixed;width:100%">
                                 <tr>
-                                    <td>Quarters: <input type="text" 
-                                                         class="form-control" 
-                                                         id="quarters-screen" 
-                                                         value="${currentChange.quarters}"
-                                                         style="width:95%"
-                                                         placeholder="0" required/>
+                                    <td align="center">Quarters: <input type="text"
+                                                                        class="form-control" 
+                                                                        id="quarters-screen" 
+                                                                        value="${currentChange.quarters}"
+                                                                        style="width:90%"
+                                                                        placeholder="0" required/>
                                     </td>
 
-                                    <td>Dimes: <input type="text" 
-                                                      class="form-control" 
-                                                      id="dimes-screen" 
-                                                      value="${currentChange.dimes}"
-                                                      style="width:95%"
-                                                      placeholder="0" required/>
+                                    <td align="center">Dimes: <input type="text"
+                                                                     class="form-control" 
+                                                                     id="dimes-screen" 
+                                                                     value="${currentChange.dimes}"
+                                                                     style="width:90%"
+                                                                     placeholder="0" required/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Nickels: <input type="text" 
-                                                        class="form-control" 
-                                                        id="nickels-screen" 
-                                                        value="${currentChange.nickels}"
-                                                        style="width:95%"
-                                                        placeholder="0" required/>
+                                    <td align="center">Nickels: <input type="text"
+                                                                       class="form-control" 
+                                                                       id="nickels-screen" 
+                                                                       value="${currentChange.nickels}"
+                                                                       style="width:90%"
+                                                                       placeholder="0" required/>
                                     </td>
 
-                                    <td>Pennies: <input type="text" 
-                                                        class="form-control" 
-                                                        id="pennies-screen" 
-                                                        value="${currentChange.pennies}"
-                                                        style="width:95%"
-                                                        placeholder="0" required/>
+                                    <td align="center">Pennies: <input type="text"
+                                                                       class="form-control" 
+                                                                       id="pennies-screen" 
+                                                                       value="${currentChange.pennies}"
+                                                                       style="width:90%"
+                                                                       placeholder="0" required/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <form method ="POST" action="makeChange">
+                                            <button type="submit" 
+                                                    class="btn btn-default btn-block" 
+                                                    id="change-button">Return Change
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             </table>
 
-                            <form method ="POST" action="makeChange">
-                                <button type="submit" 
-                                        class="btn btn-default btn-block" 
-                                        id="change-button">Return Change
-                                </button>
-                            </form>
                         </div>
                     </div>
 

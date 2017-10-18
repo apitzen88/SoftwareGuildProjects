@@ -59,25 +59,29 @@ public class VendingMachineServiceImpl implements VendingMachineService {
     }
 
     @Override
-    public void purchaseItem(String id) {
-        
+    public void purchaseItem(String id) throws InvalidEntryException {
+        try{
         Item item = getItem(id);
         BigDecimal price = new BigDecimal(item.getPrice());
         int stock = item.getInventory();
-        
+        BigDecimal difference = price.subtract(balance);
         if (stock <= 0) {
             
-            message = "Out of Stock";
+            message = item.getName()+" is out of stock...";
             
         } else if (price.compareTo(balance) > 0) {
             
-            message = "Please add Money";
+            message = "Please add $"+difference;
             
         } else {
             
             balance = balance.subtract(price);
             makeChange();
             changeInventory(item);
+        }
+        } catch (NullPointerException ex){
+            message = "Try a different Selection...";
+            throw new InvalidEntryException("Invalid Entry");
         }
     }
 

@@ -90,10 +90,10 @@ public class ServiceImpl implements Service {
 
     private void validateNewOrder(Order order) throws OrderValidationException {
         // NAME, STATE, MATERIAL, AREA 
-        if (order.getCustomerName().equals(null) || order.getCustomerName().trim().length() == 0
-                || order.getState().equals(null) || order.getState().trim().length() == 0
-                || order.getMaterial().equals(null) || order.getMaterial().trim().length() == 0
-                || order.getArea().equals(null) || order.getArea().trim().length() == 0) {
+        if (order.getCustomerName() == null || order.getCustomerName().trim().length() == 0
+                || order.getState()== null || order.getState().trim().length() == 0
+                || order.getMaterial()== null || order.getMaterial().trim().length() == 0
+                || order.getArea() == null || order.getArea().trim().length() == 0) {
             throw new OrderValidationException("Field entries could not be validated");
         }
     }

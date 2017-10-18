@@ -31,6 +31,9 @@ public class Item {
         this.setInventory(inventory);
     }
 
+    public Item() {
+    }
+
     public String getId() {
         return id;
     }
