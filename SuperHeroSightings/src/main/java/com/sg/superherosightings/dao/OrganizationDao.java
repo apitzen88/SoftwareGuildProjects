@@ -1,0 +1,29 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.sg.superherosightings.dao;
+
+import com.sg.superherosightings.model.Organization;
+import java.util.List;
+
+/**
+ *
+ * @author apitz_000
+ */
+public interface OrganizationDao {
+
+    public Organization getOrganizationById(int organizationId);
+
+    public void addOrganization(Organization organization);
+
+    public void deleteOrganization(int organizationId);
+
+    public void updateOrganization(Organization organization);
+
+    public List<Organization> getAllOrganizations();
+    
+    public List<Organization> getOrganizationByHeroId(int heroId);
+
+}
